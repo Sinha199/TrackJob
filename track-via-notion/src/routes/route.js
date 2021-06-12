@@ -5,7 +5,7 @@ async function routes(app,opts){
     app.routes({
         method:'GET',
         url:'job/applications',
-        handler:controller.getApplications
+        handler:controller.getAllApplications
     });
 
     //get specific application
