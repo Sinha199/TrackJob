@@ -1,8 +1,8 @@
 const app = require('fastify')({logger : true});
 
-require('dotenv').configure()
+require('dotenv').config();
 
-app.register(require('.src/routes/route'));
+//app.register(require('.src/routes/route'));
 
 app.listen(process.env.PORT,(err,addr) => {
     if(err)
@@ -10,5 +10,5 @@ app.listen(process.env.PORT,(err,addr) => {
         app.log.error(err);
         process.exit(1);
     }
-    app.log.info('Server is listening on port $(process.env.PORT)')
+    app.log.info(`Server is listening on port ${process.env.PORT}`);
 });

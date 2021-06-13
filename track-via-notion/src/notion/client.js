@@ -3,9 +3,16 @@ const { Client } = require('@notionhq/client');
 require('dotenv').config();
 
 const notion = new Client({
-    auth:process.env.NOTION_TOKEN
+    auth: process.env.TOKEN
 });
+const getDatabases = async () =>{
+    const databases = await notion.databases.list();
 
-module.exports={
-    notion
-};
+    console.log(databases);
+}
+
+getDatabases();
+
+//module.exports={
+//    notion
+//};
