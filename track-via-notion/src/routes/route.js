@@ -1,40 +1,40 @@
-const controller = require('../controllers/controllers')
+const controller = require('../controllers/controllers');
 
 async function routes(app,opts){
     //show all appplications
-    app.routes({
+    app.route({
         method:'GET',
-        url:'job/applications',
-        handler:controller.getAllApplications
+        url:'/job/applications',
+        handler:controllers.getAllApplications
     });
 
     //get specific application
-    app.routes({
+    app.route({
         method:'GET',
-        url:'job/applications/:id',
-        handler:controller.getApplication
+        url:'/job/applications/:id',
+        handler:controllers.getApplication
     });
 
     //filter job application as per the company name
-    app.routes({
+    app.route({
         method:'GET',
-        url:'job/applications/filter',
-        handler:controller.filterApplications
-    })
+        url:'/job/applications/filter',
+        handler:controllers.filterApplications
+    });
 
     //add job application
-    app.routes({
+    app.route({
         method:'POST',
-        url:'job/applications',
-        handler:controller.addApplication
-    })
+        url:'/job/applications',
+        handler:controllers.addApplication
+    });
 
     //update application
-    app.routes({
+    app.route({
         method:'PATCH',
-        url:'job/applications/:id',
-        handler:controller.updateApplication
-    })
+        url:'/job/applications/:id',
+        handler:controllers.updateApplication
+    });
 }
 
-module.exports=routes
+module.exports=routes;
