@@ -1,7 +1,7 @@
 const app = require('fastify')({ logger: true });
 
 require('dotenv').config();
-app.register(require('./src/routes/routes'));
+app.register(require('./src/routes/route'));
 
 app.listen(process.env.PORT, (err, addr) => {
     if (err) {
