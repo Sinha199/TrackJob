@@ -118,9 +118,55 @@ const addApplication = async(req,res) =>{
     return newPage;
 };
 
+//update application
+
+const updateApplication = async(req,res)=>{
+    const upatedPage = await notion.page.update({
+        page_id = req.params.id,
+        properties:{
+            Company:{
+                title:[
+                    {
+                        text:{
+                            content:req.body.company
+                        }
+                    }
+                ]
+            }
+        },
+        Position:{
+            select:{
+                name:status
+            }
+        },
+        Status:{
+            select:{
+                name:req.body.status
+            }
+        },
+        'Next Deadline':{
+            date:{
+                start:req.body.deadline
+            }
+        },
+        'Job Description':{
+            url:req.body.url 
+        },
+        Comments:{
+            rich_text:{
+                text:{
+                    content:req.body.comments
+                }
+            }
+        },
+    });
+    return upatedPage;
+};
+
 module.exports={
     getAllApplications,
     getApplication,
     filterApplications,
-
+    addApplication,
+    updateApplication,
 };
