@@ -1,6 +1,8 @@
 <h2 align ="center">Track Job Application with notion api </h2>
 <br>
-<img align = "center" >
+<p align ="center">
+<img width="500" height="350" src="media/image.png" alt="notion">
+</p>
 
 ### References
 1. [Notion API](https://developers.notion.com/)
