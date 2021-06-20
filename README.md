@@ -1,7 +1,7 @@
 <h2 align ="center">Track Job Application with notion api </h2>
 <br>
 <p align ="center">
-![Notion api](https://github.com/Sinha199/TrackJob/tree/main/track-via-notion/media)
+<img width="500" height="350" src="notion.svg" alt="notion">
 </p>
 
 ### References
