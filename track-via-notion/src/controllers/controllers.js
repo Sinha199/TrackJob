@@ -73,6 +73,50 @@ const filterApplications = async (req,res) =>{
 
 // add application
 
+const addApplication = async(req,res) =>{
+    const newPage = await notion.pages.create({
+        parent: {
+            database_id : process.env.DB_ID
+        },
+        properties:{
+            Company:{
+                title:[
+                    {
+                        text:{
+                            content:req.body.company
+                        }
+                    }
+                ]
+            }
+        },
+        Position:{
+            select:{
+                name:status
+            }
+        },
+        Status:{
+            select:{
+                name:req.body.status
+            }
+        },
+        'Next Deadline':{
+            date:{
+                start:req.body.deadline
+            }
+        },
+        'Job Description':{
+            url:req.body.url 
+        },
+        Comments:{
+            rich_text:{
+                text:{
+                    content:req.body.comments
+                }
+            }
+        },
+    });
+    return newPage;
+};
 
 module.exports={
     getAllApplications,
